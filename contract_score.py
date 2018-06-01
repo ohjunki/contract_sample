@@ -12,7 +12,7 @@ from loopchain.tools import ScoreDatabaseType, ScoreHelper
 class UserScore(ScoreBase):
     CONTRACT_DB_ID = 'contract'
     USER_DB_ID = 'user'
-    LOG_PREFIX = "[CONTRACT SAMPLE SCORE] "
+    LOG_PREFIX = "[CONTRACT_SAMPLE_SCORE] "
     DB_ENCODING = "utf-8"
     # for find last index
     LAST_INDEX_KEY = 'last_index'
@@ -59,7 +59,7 @@ class UserScore(ScoreBase):
         self.__init_db()
         data = transaction.get_data_string()
         tx_data = json.loads(data)
-        logging.debug(self.LOG_PREFIX + "tx_data : %s", str(tx_data))
+        logging.debug(self.LOG_PREFIX + "@@@@@tx_data : %s", str(tx_data))
 
         tx_method = tx_data['method']
         logging.debug(self.LOG_PREFIX + 'find ' + tx_method)
